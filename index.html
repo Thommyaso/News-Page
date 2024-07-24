@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./styles.css">
   <title>Frontend Mentor | News homepage</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,7 +15,13 @@
   </style>
 </head>
 <body>
-<nav>
+<nav class="nav">
+  <img src="./assets/images/logo.svg">
+  <div class="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   <ul>
     <li>
       <a>Home</a>
@@ -34,8 +40,8 @@
     </li>
   </ul>
 </nav>
-<header>
-  <img src="">
+<header class="header">
+  <div class="mainImg"></div>
   <h1>The Bright Future of Web 3.0?</h1>
   <div>
     <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people.

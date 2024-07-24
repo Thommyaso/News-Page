@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("./assets/fonts/static/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Inter;
+  src: url("./assets/fonts/static/Inter-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Inter;
+  src: url("./assets/fonts/static/Inter-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.nav > ul {
+  display: none;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.hamburger {
+  height: 1.063rem;
+  width: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hamburger > div {
+  background-color: black;
+  height: 0.188rem;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+.header .mainImg {
+  background-image: url("./assets/images/image-web-3-mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */
