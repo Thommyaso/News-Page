@@ -56,6 +56,11 @@ body.no-scroll {
   overflow: hidden;
 }
 
+@media only screen and (min-width: 1141px) {
+  body.no-scroll {
+    overflow: scroll;
+  }
+}
 :root {
   --body-padding: 16px;
 }
@@ -87,8 +92,6 @@ a:hover, a:focus, a:active {
 }
 
 .container {
-  z-index: 1000;
-  position: relative;
   display: inline-block;
   width: fit-content;
   height: fit-content;
@@ -100,6 +103,7 @@ a:hover, a:focus, a:active {
   position: relative;
   border: none;
   background-color: transparent;
+  z-index: 100;
 }
 
 .hamburger:hover {
@@ -148,11 +152,10 @@ a:hover, a:focus, a:active {
   top: 0;
   left: 0;
   background-color: rgba(73, 73, 73, 0.6470588235);
-  z-index: 50;
 }
 
 @media only screen and (min-width: 1141px) {
-  .hamburger {
+  .container {
     display: none;
     visibility: hidden;
     overflow: hidden;
@@ -190,7 +193,6 @@ a:hover, a:focus, a:active {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 100;
     visibility: visible;
     display: block;
     height: 100vh;

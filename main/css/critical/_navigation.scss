@@ -8,8 +8,8 @@
   align-items: center;
 }
 .container {
-  z-index: 1000;
-  position: relative;
+ // z-index: 1000;
+  //position: relative;
   display: inline-block;
   width: fit-content;
   height: fit-content;
@@ -23,6 +23,7 @@
   position: relative;
   border: none;
   background-color: transparent;
+  z-index: 100;
 
   &:hover {
     cursor: pointer;
@@ -76,11 +77,11 @@
   top: 0;
   left: 0;
   background-color: $menu-shadow;
-  z-index: 50;
+  //z-index: 50;
 }
 
 @media only screen and (min-width: 1141px) {
-  .hamburger {
+  .container {
     display: none;
     visibility: hidden;
     overflow: hidden;
@@ -127,7 +128,7 @@
       position: fixed;
       top: 0;
       right: 0;
-      z-index: 100;
+     // z-index: 1000;
       visibility: visible;
       display: block;
       height: 100vh;
