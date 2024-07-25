@@ -1,0 +1,11 @@
+@import "../abstracts";
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-family: 'Inter', sans-serif;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $main-background;
+}
