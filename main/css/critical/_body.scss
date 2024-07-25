@@ -5,7 +5,11 @@ body {
   margin-right: auto;
   width: fit-content;
   font-family: 'Inter', sans-serif;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: var(--body-padding);
+  padding-right: var(--body-padding);
   background-color: $main-background;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }

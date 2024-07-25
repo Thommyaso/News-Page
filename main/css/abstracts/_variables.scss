@@ -1,3 +1,7 @@
+:root {
+  --body-padding: 16px; //this has to be a css variable written in px for ease of access in js
+}
+
 //Brand Colors
 $black: #000;
 $off-white: #FFFDFA;
@@ -15,6 +19,3 @@ $main-btn-hover: $off-white;
 $separator-color: $gray-blue;
 $header-color-01: $off-yellow;
 $paragraph-color-01: $light-gray;
-
-// Typography
-$html-font-size: 16px;

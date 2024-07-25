@@ -1,3 +1,7 @@
+:root {
+  --body-padding: 16px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,6 +18,10 @@ a:hover, a:focus, a:active {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+
+:root {
+  --body-padding: 16px;
 }
 
 * {
@@ -39,9 +47,17 @@ body {
   margin-right: auto;
   width: fit-content;
   font-family: "Inter", sans-serif;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: var(--body-padding);
+  padding-right: var(--body-padding);
   background-color: #FFFDFA;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+:root {
+  --body-padding: 16px;
 }
 
 * {
@@ -70,24 +86,11 @@ a:hover, a:focus, a:active {
   align-items: center;
 }
 
-.hamburger {
-  height: 1.063rem;
-  width: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.hamburger > div {
-  background-color: #000;
-  height: 0.188rem;
-  width: 100%;
-}
-
 @media only screen and (min-width: 1141px) {
   .hamburger {
     display: none;
     visibility: hidden;
+    overflow: hidden;
     height: 0;
     width: 0;
   }
@@ -106,34 +109,113 @@ a:hover, a:focus, a:active {
   }
 }
 @media only screen and (max-width: 1140px) {
-  .nav > ul {
+  .nav .navBar {
     display: none;
     visibility: hidden;
     height: 0;
     width: 0;
+    overflow: hidden;
+    transition: width 0.2s ease-in-out;
+  }
+  .nav .navBar-hidden {
+    background-color: #FFFDFA;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    visibility: visible;
+    display: block;
+    height: 100vh;
+  }
+  .nav .navBar-hidden ul {
+    margin-top: 10rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav .navBar-hidden ul li {
+    margin: 1.5rem 4.5rem;
+  }
+  .nav .navBar-active {
+    width: 70vw;
   }
 }
+.container {
+  z-index: 1000;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+}
+
+.hamburger {
+  width: 3.125rem;
+  height: 2.5rem;
+  position: relative;
+  border: none;
+  background-color: transparent;
+}
+
+.hamburger__bar {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  position: absolute;
+  border-radius: 0.025rem;
+  top: 50%;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;
+}
+
+.hamburger__bar:nth-child(2) {
+  transform: translateY(-0.5rem);
+}
+
+.hamburger__bar:nth-child(3) {
+  transform: translateY(0.5rem);
+}
+
+.hamburger-active .hamburger__bar:nth-child(1) {
+  transition: none;
+  opacity: 0;
+  transform: scaleY(0);
+  visibility: hidden;
+}
+
+.hamburger-active .hamburger__bar:nth-child(2) {
+  transform-origin: center;
+  transform: rotate(135deg);
+}
+
+.hamburger-active .hamburger__bar:nth-child(3) {
+  transform-origin: center;
+  transform: rotate(-135deg);
+}
+
 @font-face {
   font-family: Inter;
-  src: url("../../../assets/fonts/static/Inter-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/static/Inter-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Inter;
-  src: url("../../../assets/fonts/static/Inter-Bold.ttf") format("truetype");
+  src: url("./assets/fonts/static/Inter-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: Inter;
-  src: url("../../../assets/fonts/static/Inter-ExtraBold.ttf") format("truetype");
+  src: url("./assets/fonts/static/Inter-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
+:root {
+  --body-padding: 16px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

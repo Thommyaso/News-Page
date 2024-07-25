@@ -6,27 +6,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-}
-
-.hamburger {
-  height: 1.063rem;
-  width: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  > div {
-    background-color: $hamburger-color-01;
-    height: 0.188rem;
-    width: 100%;
-  }
 }
 
 @media only screen and (min-width: 1141px) {
   .hamburger {
     display: none;
     visibility: hidden;
+    overflow: hidden;
     height: 0;
     width: 0;
   }
@@ -52,11 +38,97 @@
 
 @media only screen and (max-width: 1140px) {
   .nav {
-    > ul {
+    .navBar {
       display: none;
       visibility: hidden;
       height: 0;
       width: 0;
+      overflow: hidden;
+      transition: width 0.2s ease-in-out;
+    }
+
+    .navBar-hidden{
+      background-color: $main-background;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 100;
+      visibility: visible;
+      display: block;
+      height: 100vh;
+
+      ul {
+        margin-top: 10rem;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        li {
+          margin: 1.5rem 4.5rem;
+        }
+      }
+    }
+
+    .navBar-active {
+      width: 70vw;
+    }
+  }
+}
+
+.container {
+  z-index: 1000;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+}
+
+.hamburger {
+  $hamburger-height: 1rem;
+
+  width: 3.125rem;
+  height: 2.5rem;
+  position: relative;
+  border: none;
+  background-color: transparent;
+
+  &__bar {
+    $bar-positionY: calc($hamburger-height / 2);
+
+    width: 100%;
+    height: 3px;
+    background-color: $hamburger-color-01;
+    position: absolute;
+    border-radius: 0.025rem;
+    top: 50%;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;
+    &:nth-child(2) {
+      transform: translateY(-$bar-positionY);
+    }
+
+    &:nth-child(3) {
+      transform: translateY($bar-positionY);
+    }
+  }
+}
+
+.hamburger-active {
+  .hamburger__bar {
+    &:nth-child(1){
+      transition: none;
+      opacity: 0;
+      transform: scaleY(0);
+      visibility: hidden;
+    }
+
+    &:nth-child(2) {
+      transform-origin: center;
+      transform:rotate(135deg);
+    }
+
+    &:nth-child(3) {
+      transform-origin: center;
+      transform:rotate(-135deg);
     }
   }
 }
