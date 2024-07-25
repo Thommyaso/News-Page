@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
-    const hamburgerMenu = document.querySelector('#navBar');
+    const hamburgerMenu = document.querySelector('.navBar');
     const body = document.querySelector('body');
     const shadow = document.querySelector('.shadow');
     const root = document.documentElement;

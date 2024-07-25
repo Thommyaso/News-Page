@@ -36,20 +36,6 @@
       margin-bottom: 1.5rem;
       line-height: 2;
     }
-
-    &__btn {
-      width: 11.563rem;
-      height: 3rem;
-      border: none;
-      font-weight: bold;
-      background-color: $light-vermillion;
-    }
-
-    &__btn:hover {
-      cursor: pointer;
-      color: $main-btn-hover;
-      background-color: $panel-background-01;
-    }
   }
 
   .list {
@@ -72,7 +58,6 @@
           color: $header-color-01;
         }
       }
-
     }
 
     &__box:last-child{
@@ -132,12 +117,10 @@
       color: $gray-blue;
       line-height: 1.5;
     }
-
   }
 }
 
 @media only screen and (max-width: 700px) {
-
   .header {
     &__main {
       flex-direction: column;

@@ -295,20 +295,6 @@ a:hover, a:focus, a:active {
   line-height: 2;
 }
 
-.header .banner__btn {
-  width: 11.563rem;
-  height: 3rem;
-  border: none;
-  font-weight: bold;
-  background-color: #F15D51;
-}
-
-.header .banner__btn:hover {
-  cursor: pointer;
-  color: #FFFDFA;
-  background-color: #00001A;
-}
-
 .header .list {
   background-color: #00001A;
   padding: 2rem 1.5rem;
@@ -447,6 +433,44 @@ a:hover, a:focus, a:active {
   .tile:last-of-type {
     margin-right: 0;
   }
+}
+:root {
+  --body-padding: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn-main {
+  width: 11.563rem;
+  height: 3rem;
+  border: none;
+  font-weight: bold;
+  background-color: #F15D51;
+}
+
+.btn-main:hover {
+  color: #FFFDFA;
+  background-color: #00001A;
 }
 
 /*# sourceMappingURL=styles.css.map */
