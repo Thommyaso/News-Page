@@ -1,0 +1,160 @@
+@import "../abstracts";
+
+.nav {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+ // z-index: 1000;
+  //position: relative;
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+}
+
+.hamburger {
+  $hamburger-height: 1rem;
+
+  width: 3.125rem;
+  height: 2.5rem;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  z-index: 100;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__bar {
+    $bar-positionY: calc($hamburger-height / 2);
+
+    width: 100%;
+    height: 3px;
+    background-color: $hamburger-color-01;
+    position: absolute;
+    border-radius: 0.025rem;
+    top: 50%;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;
+    &:nth-child(2) {
+      transform: translateY(-$bar-positionY);
+    }
+
+    &:nth-child(3) {
+      transform: translateY($bar-positionY);
+    }
+  }
+}
+
+.hamburger-active {
+  .hamburger__bar {
+    &:nth-child(1){
+      transition: none;
+      opacity: 0;
+      transform: scaleY(0);
+      visibility: hidden;
+    }
+
+    &:nth-child(2) {
+      transform-origin: center;
+      transform:rotate(135deg);
+    }
+
+    &:nth-child(3) {
+      transform-origin: center;
+      transform:rotate(-135deg);
+    }
+  }
+}
+
+.shadow-active {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $menu-shadow;
+  //z-index: 50;
+}
+
+@media only screen and (min-width: 1141px) {
+  .container {
+    display: none;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+  }
+
+  .nav {
+    ul {
+      display: flex;
+      list-style: none;
+      width: 26.938rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    a {
+      color: $separator-color;
+    }
+
+    a:hover {
+      color: $light-vermillion;
+    }
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .nav {
+    .navBar {
+      display: none;
+      visibility: hidden;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+      transition: width 0.2s ease-in-out;
+
+      a:hover {
+        color: $off-yellow;
+      }
+    }
+
+    .navBar-hidden{
+      background-color: $main-background;
+      position: fixed;
+      top: 0;
+      right: 0;
+     // z-index: 1000;
+      visibility: visible;
+      display: block;
+      height: 100vh;
+
+      ul {
+        margin-top: 10rem;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        li {
+          margin: 1.5rem 4.5rem;
+        }
+      }
+    }
+
+    .navBar-active {
+      width: 40vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .nav {
+    .navBar-active {
+      width: 65vw;
+    }
+  }
+}
