@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = document.documentElement;
     const computedStyle = getComputedStyle(root);
     const bodyPadding = parseInt(computedStyle.getPropertyValue('--body-padding').trim(), 10);
-    const updatedPadding = window.innerWidth - document.documentElement.clientWidth + bodyPadding;
 
     let timeoutId
 
@@ -21,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 hamburgerMenu.classList.toggle('navBar-hidden');
             },100)
         } else {
+            const updatedPadding = window.innerWidth - document.documentElement.clientWidth + bodyPadding;
+
             clearTimeout(timeoutId);
             hamburgerMenu.classList.toggle('navBar-hidden');
             body.style.paddingRight = `${updatedPadding}px`
